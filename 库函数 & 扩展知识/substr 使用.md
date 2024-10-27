@@ -91,4 +91,34 @@ std::cout << str << std::endl;
 
 注意：`substr` 函数会创建一个新的子字符串对象，这在某些情况下可能是一个不必要的性能开销。
 
-总之，`substr` 是一个非常实用的函数，可以方便地从字符串中提取所需的部分，在字符串处理中经常被使用。
+扩展：使用字符串的迭代器，可以更加灵活地进行操作，特别是当你需要基于某些条件进行截取时。
+
+示例：
+
+```cpp
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string str = "Hello, World!";
+
+    // 使用字符串的迭代器来创建子字符串
+    std::string subStr(str.begin() + 7, str.begin() + 12);
+
+    std::cout << "Original string: " << str << std::endl;
+    std::cout << "Sub-string: " << subStr << std::endl;
+
+    return 0;
+}
+
+```
+
+输出：
+
+```cpp
+
+Original string: Hello, World!
+Sub-string: World
+
+```
+
