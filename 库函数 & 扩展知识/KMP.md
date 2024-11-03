@@ -1,4 +1,4 @@
-1. 首先,我们定义一个函数来构建失配函数(部分匹配表):
+## 1. 首先,我们定义一个函数来构建失配函数(部分匹配表):
 
 ```cpp
 vector<int> buildFailureFunction(const string& pattern) {
@@ -22,7 +22,7 @@ vector<int> buildFailureFunction(const string& pattern) {
 
 这个函数接收模式串作为输入,返回一个整数向量,表示失配函数。对于模式串中的每个位置,它计算出当匹配失败时应该回退到的位置。
 
-2. 然后,我们实现KMP搜索算法:
+## 2. 然后,我们实现KMP搜索算法:
 
 ```cpp
 vector<int> kmpSearch(const string& text, const string& pattern) {
@@ -54,7 +54,7 @@ vector<int> kmpSearch(const string& text, const string& pattern) {
 
 这个函数接收主文本串和模式串作为输入,返回一个整数向量,表示模式串在主文本串中出现的所有起始位置。
 
-3. 最后,我们可以编写一个主函数来测试我们的KMP实现:
+## 3. 最后,我们可以编写一个主函数来测试我们的KMP实现:
 
 ```cpp
 #include <iostream>
