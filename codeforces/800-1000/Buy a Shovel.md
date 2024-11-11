@@ -1,5 +1,4 @@
-# [Buy a Shovel](https://codeforces.com/problemset/problem/732/A)
-买一把铲子
+# [Buy a Shovel](https://codeforces.com/problemset/problem/732/A)  买一把铲子
 
 先把结果贴出来：
 
