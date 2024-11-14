@@ -39,3 +39,35 @@ int main() {
     return 0;
 }
 ```
+
+下面是AI缩写之后的，变得短了一点，减少了一些冗余的代码，看上去更清爽了：
+
+```cpp
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false); // For faster I/O
+    cin.tie(nullptr); // Untie cin from cout
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k;
+        cin >> n >> k;
+        if (n == 1) {
+            cout << k << '\n';
+            continue;
+        }
+        if (n == k || n % k == 0)
+            cout << 1 << '\n';
+        else if (n < k)
+            cout << k / n + (k % n != 0) << '\n';
+        else
+            cout << 2 << '\n';
+    }
+    return 0;
+}
+
+```
