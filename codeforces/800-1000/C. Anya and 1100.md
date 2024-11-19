@@ -51,7 +51,7 @@ int main() {
 }
 ```
 
-以下是官方题解里的解释：
+## 以下是官方题解里的解释：
 
 First, in a naive way, let's count $count$ — the number of times “1100” occurs in $s$.
 
@@ -61,7 +61,7 @@ Thus, by doing $count = count + (after - before)$, we get the number of times th
 
 Complexity: $O(|s| + q)$
 
-相信你应该很快就能理解了，我接下来指出这里面很重要的一些技巧：
+## 相信你应该很快就能理解了，我接下来指出这里面很重要的一些技巧：
 
 ```cpp
 
