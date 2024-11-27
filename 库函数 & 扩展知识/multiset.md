@@ -177,3 +177,29 @@ int main() {
 
 `multiset` 是一个非常强大的容器，适用于需要存储并按排序规则管理重复元素的场景。它提供了高效的查找、插入和删除操作，并且可以自定义排序规则。
 通过 `multiset`，你可以轻松地处理重复数据、统计元素频次以及对数据进行有序存储和操作。
+
+### 注意
+
+这是我在[力扣](https://leetcode.cn/problems/sliding-subarray-beauty/description/)上写的一道题的代码，用到了 `multiset` ，但是报错了，原因是 `multiset` 不像数组或者哈希表那样支持索引操作，只能用迭代器来表示：
+```cpp
+
+class Solution {
+public:
+    vector<int> getSubarrayBeauty(vector<int>& nums, int k, int x) {
+        multiset<int> map;
+        vector<int> res;
+        for (int i = 0; i < k; ++i)
+            map.insert(nums[i]);
+        res.push_back(map[x]);
+        for (int i = k; i < nums.size(); ++i) {
+            auto it = map.find(nums[i - k]);
+            map.earse(it);
+            map.insert(nums[i]);
+            res.push_back(map[x]);
+        }
+        return res;
+    }
+};
+```
+
+
