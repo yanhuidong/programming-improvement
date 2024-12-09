@@ -52,3 +52,94 @@ auto it = lower_bound(vec.begin(), vec.end(), 25, comp);
 - 返回值是迭代器，需要注意是否等于end()
 - 对于关联容器(如set)，优先使用成员函数版本的lower_bound
 - 如果需要找到第一个大于某个值的元素，应该使用upper_bound
+
+---
+
+以下用一些实际的代码示例来说明lower_bound的常见使用场景:
+
+1. 在排序数组中查找插入位置:
+```cpp
+vector<int> nums = {1, 3, 5, 7, 9};
+int target = 4;
+
+// 找到第一个不小于4的位置
+auto it = lower_bound(nums.begin(), nums.end(), 4);
+int pos = it - nums.begin(); // pos = 2,即5的位置
+nums.insert(it, target);  // nums变为 {1, 3, 4, 5, 7, 9}
+```
+
+2. 在set中使用lower_bound:
+```cpp
+set<int> numSet = {10, 20, 30, 40, 50};
+auto it = numSet.lower_bound(25);  
+// it指向30,因为30是第一个不小于25的元素
+if(it != numSet.end()) {
+    cout << *it << endl; // 输出30
+}
+```
+
+3. 使用自定义比较函数:
+```cpp
+struct Person {
+    string name;
+    int age;
+    bool operator<(const Person& other) const {
+        return age < other.age;
+    }
+};
+
+vector<Person> people = {
+    {"Alice", 20},
+    {"Bob", 25}, 
+    {"Charlie", 30}
+};
+
+Person target = {"", 27};
+auto it = lower_bound(people.begin(), people.end(), target);
+// it 指向 Charlie,因为30是第一个不小于27的年龄
+```
+
+4. 在map中查找不小于某个键的元素:
+```cpp
+map<string, int> scores = {
+    {"Alice", 95},
+    {"Bob", 89},
+    {"Charlie", 92}
+};
+
+auto it = scores.lower_bound("B");
+// it 指向 "Bob",因为B是第一个不小于"B"的键
+if(it != scores.end()) {
+    cout << it->first << ": " << it->second << endl;
+}
+```
+
+5. 数组中查找区间:
+```cpp
+vector<int> arr = {1, 2, 2, 2, 3, 4};
+// 找到所有2的范围
+auto start = lower_bound(arr.begin(), arr.end(), 2);
+auto end = upper_bound(arr.begin(), arr.end(), 2);
+
+// 打印范围内的元素数量
+int count = end - start;  // count = 3
+```
+
+6. 判断元素是否存在:
+```cpp
+vector<int> sorted_nums = {1, 3, 5, 7, 9};
+int target = 5;
+
+auto it = lower_bound(sorted_nums.begin(), sorted_nums.end(), target);
+if(it != sorted_nums.end() && *it == target) {
+    cout << "Found " << target << endl;
+} else {
+    cout << "Not found" << endl;
+}
+```
+
+注意事项:
+1. 确保容器是有序的,否则lower_bound的结果是未定义的
+2. 对于关联容器(set,map等),优先使用容器的成员函数lower_bound而不是算法版本
+3. 注意检查返回的迭代器是否有效(是否等于end())
+4. 如果需要找大于而不是大于等于的元素,应该使用upper_bound
