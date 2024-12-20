@@ -52,3 +52,43 @@ int main() {
 }
 
 ```
+
+以下是我自己优化的不使用额外空间的代码
+
+```cpp
+
+#include<bits/stdc++.h>
+using namespace std;
+int t;
+string s;
+
+void solve() {
+    cin >> s;
+    int sum = 0, twos = 0, threes = 0;
+    for (char c : s) {
+        int n = c - '0';
+        sum += n;
+        if (n == 2)
+            twos++;
+        if (n == 3)
+            threes++;
+    }
+
+    for (int i = 0; i <= min(8, twos); ++i) {
+        for (int j = 0; j <= min(8, threes); ++j) {
+            if ((sum + i * 2 + j * 6) % 9 == 0) {
+                cout << "YES" << '\n';
+                return;
+            }
+        }
+    }
+    cout << "NO" << '\n';
+}
+
+int main() {
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+}
+```
