@@ -5,3 +5,4 @@
 | https://cloud.siliconflow.cn/models | https://api.siliconflow.cn | api在另一个文档里，嫖太多了，用不完，用不完啊 |
 | https://opus.gptuu.com/panel （很便宜的api，这玩意现在没有免费的了，难受） | https://opus.gptuu.com | sk-05yTfypFfG49LaOrzyolkGqOIWMHA3Ruqo1oEzstws0G5naC |
 | https://aistudio.google.com/app/apikey （薅Google羊毛，虽然不知道用多了会怎么样，先用着再说吧） | 不知道 | AIzaSyC2Ya3l-MBRCLDDeoranTwa281lgnVxQZ8 |
+| https://platform.lingyiwanwu.com/billing （零一万物官方API）| https://api.lingyiwanwu.com | 423636bf6681479991e7b2feea64737b |
