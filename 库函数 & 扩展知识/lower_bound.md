@@ -17,6 +17,7 @@ ForwardIterator lower_bound (ForwardIterator first, ForwardIterator last, const 
 - last: 容器的结束迭代器
 - val: 要查找的值
 - comp: 可选的比较函数对象
+- 返回值是一个迭代器，指向容器中第一个不小于给定值的元素的下标
 
 4. 基本用法：
 ```cpp
