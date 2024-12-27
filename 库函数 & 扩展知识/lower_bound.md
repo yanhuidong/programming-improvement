@@ -139,6 +139,36 @@ if(it != sorted_nums.end() && *it == target) {
 }
 ```
 
+7. 寻找指定字符串的索引（先对字符串排序，可直接使用sort）
+```cpp
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+int main() {
+    std::string s = "kmgaecifd"; // 无序字符串
+    char target = 'e';           // 查找目标
+
+    // 对字符串排序
+    std::sort(s.begin(), s.end());
+
+    auto it = std::lower_bound(s.begin(), s.end(), target);
+
+    if (it != s.end() && *it == target) {
+        int index = it - s.begin();
+        std::cout << "Character found at index in sorted string: " << index << std::endl;
+    } else {
+        std::cout << "Character not found" << std::endl;
+    }
+
+    return 0;
+}
+
+// 输出：Character found at index in sorted string: 3
+
+```
+
 注意事项:
 1. 确保容器是有序的,否则lower_bound的结果是未定义的
 2. 对于关联容器(set,map等),优先使用容器的成员函数lower_bound而不是算法版本
