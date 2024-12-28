@@ -54,7 +54,7 @@ int main() {
 }
 ```
 
-**注意**：这里不能使用 `unordered_set` ，会超时，原因是之后的测试案例哈希冲突过于严重，导致 `unordered_set` 的插入和查找功能的时间复杂度达到 $O(N)$，具体可以看看[unordered_set和set对比](../库函数%20&%20扩展知识/unordered_set与set对比.md)
+**注意**：这里不能使用 `unordered_set` ，会超时，原因是之后的测试案例哈希冲突过于严重，导致 `unordered_set` 的插入和查找功能的时间复杂度达到 $O(N)$，具体可以看看[unordered_set和set对比](../../库函数%20&%20扩展知识/unordered_set与set对比.md)
 
 以下是对代码的详细分析，包括代码的功能、实现思路、关键点以及时间复杂度等。
 
